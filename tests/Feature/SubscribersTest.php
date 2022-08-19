@@ -160,3 +160,57 @@ it('can delete a subscriber', function (string $string) {
         )
     )->toBeBool()->toEqual(true);
 })->with('strings');
+
+it('can check if an email is an active subscriber', function (string $string) {
+    fakeClient(
+        body: [
+            'uuid' => $string,
+            'email' => $string,
+            'first_name' => $string,
+            'last_name' => $string,
+            'meta' => $string,
+            'tags' => [$string],
+            'status' => 'subscibed',
+            'confirmed_at' => now(),
+            'unsubscribed_at' => null,
+        ],
+    );
+
+    $client = new Client(
+        url: $string,
+        token: $string,
+    );
+
+    expect(
+        $client->isActiveSubscriber(
+            email: $string,
+        ),
+    )->toBeBool()->toEqual(true);
+})->with('strings');
+
+it('can check if an email is an inactive subscriber', function (string $string) {
+    fakeClient(
+        body: [
+                  'uuid' => $string,
+                  'email' => $string,
+                  'first_name' => $string,
+                  'last_name' => $string,
+                  'meta' => $string,
+                  'tags' => [$string],
+                  'status' => 'unsubscribed',
+                  'confirmed_at' => now(),
+                  'unsubscribed_at' => null,
+              ],
+    );
+
+    $client = new Client(
+        url: $string,
+        token: $string,
+    );
+
+    expect(
+        $client->isActiveSubscriber(
+            email: $string,
+        ),
+    )->toBeBool()->toEqual(false);
+})->with('strings');

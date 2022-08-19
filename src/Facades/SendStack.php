@@ -12,6 +12,7 @@ use SendStack\Laravel\Http\Resources\TagResource;
 /**
  * @method static SubscribersResource subscribers()
  * @method static TagResource tags()
+ * @method static bool isActiveSubscriber(string $email)
  *
  * @see Client
  */

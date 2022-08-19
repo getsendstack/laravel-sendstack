@@ -11,8 +11,10 @@ use SendStack\Laravel\Concerns\CanAccessProperties;
 use SendStack\Laravel\Concerns\CanBuildRequests;
 use SendStack\Laravel\Concerns\CanSendRequests;
 use SendStack\Laravel\Contracts\ClientContract;
+use SendStack\Laravel\Enums\Status;
 use SendStack\Laravel\Http\Resources\SubscribersResource;
 use SendStack\Laravel\Http\Resources\TagResource;
+use Throwable;
 
 class Client implements ClientContract
 {
@@ -45,5 +47,22 @@ class Client implements ClientContract
         return new TagResource(
             client: $this,
         );
+    }
+
+    public function isActiveSubscriber(string $email): bool
+    {
+        try {
+            $subscriber = $this->subscribers()->get(
+                query: $email,
+            );
+        } catch (Throwable) {
+            return false;
+        }
+
+        if ($subscriber->status !== Status::SUBSCRIBED) {
+            return false;
+        }
+
+        return true;
     }
 }

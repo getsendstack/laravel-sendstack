@@ -313,6 +313,31 @@ SendStack::subscribers()->removeTag(
 );
 ```
 
+### Checking if an email address is an Active Subscriber
+
+```php
+use SendStack\Laravel\Contracts\ClientContract;
+use SendStack\Laravel\Facades\SendStack;
+
+/**
+ * Without a Facade
+ */
+$client = app()->make(
+    abstract: ClientContract::class,
+);
+
+$client->isActiveSubscriber(
+    email: 'taylor@laravel.com',
+);
+
+/**
+ * Using the Facade
+ */
+SendStack::isActiveSubscriber(
+    email: 'taylor@laravel.com',
+);
+```
+
 ### Getting all Tags
 
 ```php
