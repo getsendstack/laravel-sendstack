@@ -1,6 +1,14 @@
 {
     "name": "getsendstack/laravel-sendstack",
     "description": "A Laravel Package to work with the SendStack API",
+    "keywords": [
+        "beyondcode",
+        "getsendstack",
+        "laravel-sendstack",
+        "sendstack",
+        "php"
+    ],
+    "homepage": "https://github.com/getsendstack/laravel-sendstack",
     "license": "MIT",
     "authors": [
         {
