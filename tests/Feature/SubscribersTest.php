@@ -197,7 +197,7 @@ it('can check if an email is an inactive subscriber', function (string $string) 
                   'last_name' => $string,
                   'meta' => $string,
                   'tags' => [$string],
-                  'status' => 'unsubscribed',
+                  'status' => 'pending',
                   'confirmed_at' => now(),
                   'unsubscribed_at' => null,
               ],
