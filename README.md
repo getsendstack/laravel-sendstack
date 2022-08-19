@@ -23,8 +23,8 @@ php artisan vendor:publish --tag="sendstack-config"
 
 To start using this package, you need to add environment variables for:
 
-- `SEND_STACK_URL`
-- `SEND_STACK_TOKEN`
+- `SENDSTACK_URL` - Optional, not really needed as this has a default
+- `SENDSTACK_TOKEN` - You can generate this from your getSendStack account.
 
 The package will pick these up in its configuration and use these when it resolves an instance of the `Client`.
 

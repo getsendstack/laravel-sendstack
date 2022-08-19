@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'sendstack' => [
-        'url' => env('SEND_STACK_URL'),
-        'token' => env('SEND_STACK_TOKEN'),
+        'url' => env('SENDSTACK_URL', 'https://getsendstack.com/api'),
+        'token' => env('SENDSTACK_TOKEN'),
     ],
 ];
