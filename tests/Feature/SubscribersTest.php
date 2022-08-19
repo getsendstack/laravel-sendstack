@@ -74,7 +74,7 @@ it('can get a single subscriber', function (string $string) {
     );
 
     expect(
-        $client->subscribers()->get(uuid: $string),
+        $client->subscribers()->get(query: $string),
     )->toBeInstanceOf(
         Subscriber::class
     );

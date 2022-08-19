@@ -133,14 +133,14 @@ $client = app()->make(
 );
 
 $client->subscribers()->get(
-    uuid: '1234-1234-1234-1234'
+    query: '1234-1234-1234-1234' // This can be either the subscribers UUID or their Email Address
 );
 
 /**
  * Using the Facade
  */
 SendStack::subscribers()->get(
-    uuid: '1234-1234-1234-1234',
+    query: '1234-1234-1234-1234', // This can be either the subscribers UUID or their Email Address
 );
 ```
 

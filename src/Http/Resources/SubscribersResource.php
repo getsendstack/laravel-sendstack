@@ -40,11 +40,11 @@ class SubscribersResource extends SendStackResource
         );
     }
 
-    public function get(string $uuid): Subscriber
+    public function get(string $query): Subscriber
     {
         $response = $this->client->send(
             method: Method::GET,
-            url: "/subscribers/{$uuid}",
+            url: "/subscribers/{$query}",
         );
 
         if ($response->failed()) {
