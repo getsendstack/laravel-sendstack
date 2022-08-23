@@ -6,6 +6,7 @@ namespace SendStack\Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 use SendStack\Laravel\Http\Client;
+use SendPortal\Laravel\Contracts\ClientContract;
 use SendStack\Laravel\Http\Resources\SubscribersResource;
 use SendStack\Laravel\Http\Resources\TagResource;
 
@@ -20,6 +21,6 @@ class SendStack extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return Client::class;
+        return ClientContract::class;
     }
 }
