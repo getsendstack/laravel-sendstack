@@ -14,9 +14,7 @@ class SendStackServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(
             path: __DIR__.'/../../config/services.php',
-            key: config_path(
-                path: 'services',
-            )
+            key: 'services',
         );
     }
 
